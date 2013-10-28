@@ -1,5 +1,19 @@
 #!/bin/bash
 
+##
+## CONFIG
+## Set the two following variables for your purposes
+##
+
+# Admin user to recieve new SSH key for current user
+ADMIN_EMAIL='admin@example.com'
+# Anonymous email address to send email from
+FROM_EMAIL='noreply@example.com'
+
+##
+## END CONFIG
+##
+
 # Run as standard user
 
 if [ "$USER" == "root" ]
@@ -12,11 +26,6 @@ echo "Setting up dotfiles for user"
 git clone git://github.com/damiankloip/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 rake install
-
-# Admin user to recieve new SSH key for current user
-ADMIN_EMAIL='barry@reallifedesign.co.uk'
-# Anonymous email address to send email from
-FROM_EMAIL='noreply@reallifedesign.co.uk'
 
 echo "Adding ~/.bashrc aliases for dca and ess"
 echo "alias dca='drush cc all'" >> ~/.bashrc
