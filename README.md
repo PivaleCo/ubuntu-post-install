@@ -24,18 +24,27 @@ Install Ubuntu.... then:
 As a regular (non-root) user in your home folder
 
 > mkdir ~/scripts
+
 > cd ~/scripts
+
 > wget https://github.com/reallifedesign/ubuntu-post-install/archive/master.zip
+
 > unzip master.zip
+
 > rm master.zip
+
 > mv ubuntu-post-install-master ubuntu-post-install
+
 > cd ubuntu-post-install
 
 Review email_ssh.php and set the first 2 variables at the top of the script.
 
 > ## Review this scripts that they suit your purposes before running them
+
 > ./1-rld-ubuntu-init.sh
+
 > sudo ./2-rld-ubuntu-system.sh
+
 > ./3-rld-ubuntu-user.sh
 
 There are optional scripts you could run after this too- check repo for info
