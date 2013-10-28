@@ -39,7 +39,7 @@ As a regular (non-root) user in your home folder
 
 Review email_ssh.php and set the first 2 variables at the top of the script.
 
-> ## Review this scripts that they suit your purposes before running them
+> ## Review these scripts that they suit your purposes before running them
 
 > ./1-rld-ubuntu-init.sh
 
