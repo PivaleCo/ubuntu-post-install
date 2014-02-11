@@ -11,14 +11,21 @@ elif [ "$1" == "--list" ]
   ls /etc/apache2/sites-available/;
 
 else
-  echo "Disabling all sites"
-  sudo rm -Rf /etc/apache2/sites-enabled/*
-  echo "Enabling $1"
-  sudo a2ensite "$1"
-  echo "Restarting Apache"
-  sudo service apache2 reload
 
-  echo "Going to docroot"
-  DOCROOT=`grep "DocumentRoot" /etc/apache2/sites-available/$1 | head -n1 | sed 's/DocumentRoot//g' | tr -d ' '`
-  cd $DOCROOT
+  # Check if site is not already enabled
+  if [ `grep "$1" /etc/apache2/sites-enabled/* | wc -l` -eq "0" ];
+    then
+    echo "Disabling all sites"
+    sudo rm -Rf /etc/apache2/sites-enabled/*
+    echo "Enabling $1"
+    sudo a2ensite "$1"
+    echo "Restarting Apache"
+    sudo service apache2 reload
+  fi
+
 fi
+
+echo "Going to docroot"
+DOCROOT=`grep "DocumentRoot" /etc/apache2/sites-available/$1 | head -n1 | sed 's/DocumentRoot//g' | tr -d ' '`
+cd $DOCROOT
+exit;
