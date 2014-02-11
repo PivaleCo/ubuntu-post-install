@@ -28,4 +28,3 @@ fi
 echo "Going to docroot"
 DOCROOT=`grep "DocumentRoot" /etc/apache2/sites-available/$1 | head -n1 | sed 's/DocumentRoot//g' | tr -d ' '`
 cd $DOCROOT
-exit;
