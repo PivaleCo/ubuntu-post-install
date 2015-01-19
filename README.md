@@ -39,9 +39,10 @@ $ mv ubuntu-post-install-master ubuntu-post-install
 $ cd ubuntu-post-install
 </pre>
 
-**Review 3-rld-ubuntu-user.sh and set the first 2 variables at the top of the script. ADMIN_EMAIL is the email you want to receive your new SSH key. FROM_EMAIL is your own email address. These could be the same if you want.**
+**Review 3-rld-ubuntu-user.sh and set the first 2 variables at the top of the script.**
+**ADMIN_EMAIL is the email you want to receive your new SSH key. FROM_EMAIL is your own email address. These could be the same if you want.**
 
-**Review these scripts that they suit your purposes before running them**
+**Review these scripts so that they suit your purposes before running them**
 
 <pre>
 $ ./1-rld-ubuntu-init.sh

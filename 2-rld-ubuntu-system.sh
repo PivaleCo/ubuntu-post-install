@@ -79,7 +79,9 @@ apt-get install -y dia-common
 
 # dotfiles for root user
 echo "Setting up dotfiles for root user"
-git clone https://github.com/reallifedesign/ubuntu-post-install.git ~/.dotfiles
-cd ~/.dotfiles
-apt-get install -y rake
-rake install
+sudo git clone https://github.com/reallifedesign/dotfiles.git /root/.dotfiles
+cd /root/.dotfiles
+sudo rake install
+
+# Return back to previous directory
+cd -
