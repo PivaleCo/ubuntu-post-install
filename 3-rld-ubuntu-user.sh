@@ -23,7 +23,7 @@ if [ "$USER" == "root" ]
 fi
 
 echo "Setting up dotfiles for user"
-git clone git://github.com/damiankloip/dotfiles ~/.dotfiles
+git clone https://github.com/reallifedesign/ubuntu-post-install.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 
