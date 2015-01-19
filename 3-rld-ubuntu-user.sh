@@ -27,6 +27,26 @@ git clone https://github.com/reallifedesign/ubuntu-post-install.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 
+# Drush docs:
+# https://github.com/drush-ops/drush
+
+# Composer docs:
+# https://getcomposer.org/doc/00-intro.md#globally
+
+echo 'Getting composer and install system-wide directory'
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+if [ `grep "/.composer/vendor/bin" ~/.bashrc | wc -l` -eq "0" ]; then
+  echo 'Adding composer config to current users home directory...'
+  touch $HOME/.localrc
+  echo 'export PATH="$HOME/.composer/vendor/bin:$PATH"' >> $HOME/.localrc
+  source $HOME/.bashrc
+fi
+
+echo 'Installing drush'
+composer global require drush/drush:6.*
+
 echo "Adding ~/.bashrc aliases for dca and ess"
 echo "alias dca='drush cc all'" >> ~/.bashrc
 echo "alias ess='source ~/scripts/enable-solo-site.sh'" >> ~/.bashrc

@@ -56,9 +56,6 @@ apt-get install -y git git-cola gitk tig
 echo "Installing MySQL Workbench"
 apt-get install -y mysql-workbench
 
-echo "Installing drush"
-apt-get install -y drush
-
 echo "installing mailutils"
 apt-get install -y mailutils
 
