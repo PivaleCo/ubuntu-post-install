@@ -53,6 +53,9 @@ service apache2 restart
 echo "Installing git"
 apt-get install -y git git-cola gitk tig
 
+echo "Install curl"
+apt-get install curl
+
 echo "Installing MySQL Workbench"
 apt-get install -y mysql-workbench
 

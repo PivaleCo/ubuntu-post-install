@@ -23,7 +23,7 @@ if [ "$USER" == "root" ]
 fi
 
 echo "Setting up dotfiles for user"
-git clone https://github.com/reallifedesign/ubuntu-post-install.git ~/.dotfiles
+git clone https://github.com/reallifedesign/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 rake install
 
@@ -77,6 +77,10 @@ sudo usermod -a -G $USER www-data
 echo "Setting permissions on /var/www"
 sudo chown -R $USER:$USER /var/www
 
+echo "Instantiating geany so program directory and files are created"
+(geany) & (sleep 5; killall geany)
+
+echo "Configuring geany for Drupal coding styles and SASS highlighting support"
 # Geany customisation for sass
 # http://ajy.co/web/scss-highlighting-in-geany/
 cp /usr/share/geany/filetype_extensions.conf ~/.config/geany/filetype_extensions.conf
